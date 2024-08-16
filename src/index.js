@@ -24,7 +24,6 @@ app.use(cors())
 const swaggerDocument = YAML.load('./swagger.yaml')
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
-
 // Connect to DATABASE
 const DATABASE_URL = process.env.DATABASE_URL;
 mongoose.connect(DATABASE_URL,{ useNewUrlParser: true, useUnifiedTopology: true });

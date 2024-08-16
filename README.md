@@ -1,6 +1,6 @@
 # Subscribers-Mongo-Node-main
 
-A simple API built with Node.js and Express that allows you to manage and fetch subscriber details from a MongoDB database. It provides endpoints to retrieve all subscribers, obtain subscriber names, or access details for a specific subscriber by their ID.
+A simple but powerful API built with Node.js and Express that allows you to manage and fetch subscriber details from a MongoDB database. It provides endpoints to retrieve all subscribers, obtain subscriber names, or access details for a specific subscriber by their ID.
 
 ## Technologies/Languages Used
 
@@ -20,7 +20,7 @@ A simple API built with Node.js and Express that allows you to manage and fetch 
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Sourabh250/Subscribers-Mongo-Node-main.git
+    git clone https://github.com/yourusername/Subscribers-Mongo-Node-main.git
     ```
 
 2. Install dependencies:
@@ -30,8 +30,8 @@ A simple API built with Node.js and Express that allows you to manage and fetch 
 
 3. Create a `.env` file at the root and add the following:
     ```plaintext
-    PORT=3000
     DATABASE_URL=your_database_connection_string
+    PORT=3001
     ```
 
 ## Usage
@@ -67,14 +67,19 @@ The tests will execute using Mocha and Chai. Test results will be generated and 
 ## Deployment
 For deployment, follow these steps:
 
-#### Prepare your environment:
+#### 1. Prepare your environment:
 Ensure that environment variables are set and the database is accessible.
-#### Deploy to your preferred hosting service:
-For example, you can use platforms like Heroku, AWS, or DigitalOcean.
-#### Set up deployment scripts if necessary:
+#### 2. Deploy to your preferred hosting service:
+For example, you can use platforms like Heroku, AWS, or Render.
+#### 3. Set up deployment scripts if necessary:
 Configure deployment settings according to your hosting provider's guidelines.
 
-http://localhost:3000/
+[**Render Link**](https://subscribers-mongo-node-main.onrender.com/)
+
+## Live API Documentation
+Explore the API documentation and interact with the endpoints via Swagger UI:
+- **Local Environment**: [Explore the API documentation](http://localhost:3000/api-docs)
+- **Production**: [Explore the API documentation](https://subscribers-mongo-node-main.onrender.com/api-docs/)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

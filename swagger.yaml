@@ -1,13 +1,22 @@
 openapi: 3.0.0
 info:
-  title: Subscriber API
+  title: 📜 Subscriber API
   version: 1.0.0
   description: API documentation for managing subscribers
+  contact:
+    name: Sourabh
+    url: https://github.com/Sourabh250
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
 servers:
   - url: https://subscribers-mongo-node-main.onrender.com/
-    description: Production server
+    description: 🌐 Render Server
   - url: http://localhost:3000
-    description: Development server
+    description: 🛠️ Development Server
+tags:
+  - name: Subscribers
+    description: Operations related to subscribers
 
 paths:
   /subscribers:
