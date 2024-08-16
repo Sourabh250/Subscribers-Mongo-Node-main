@@ -1,6 +1,7 @@
 // Import required modules
 const express = require('express')
 const dotenv = require('dotenv')
+const cors = require('cors')
 const app = require('./app.js')
 const mongoose = require('mongoose')
 const swaggerUi = require('swagger-ui-express')
@@ -15,6 +16,9 @@ const port = process.env.PORT || 3001
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static('public'))
+
+// Use CORS middleware
+app.use(cors())
 
 // Set up Swagger UI for API documentation
 const swaggerDocument = YAML.load('./swagger.yaml')
