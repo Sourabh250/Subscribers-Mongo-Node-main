@@ -1,0 +1,107 @@
+openapi: 3.0.0
+info:
+  title: Subscriber API
+  version: 1.0.0
+  description: API documentation for managing subscribers
+servers:
+  - url: http://localhost:3000
+    description: Development server
+
+paths:
+  /subscribers:
+    get:
+      summary: Retrieve a list of subscribers
+      responses:
+        '200':
+          description: A list of subscribers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                      description: Unique identifier of the subscriber
+                    name:
+                      type: string
+                      description: Name of the subscriber
+                    subscribedChannel:
+                      type: string
+                      description: Channel the subscriber is subscribed to
+                    subscribedDate:
+                      type: string
+                      format: date-time
+                      description: Date when the subscriber subscribed
+                    __v:
+                      type: integer
+                      description: Version key (for internal use)
+
+  /subscribers/names:
+    get:
+      summary: Retrieve a list of subscribers with name and subscribedChannel
+      responses:
+        '200':
+          description: A list of subscribers with name and subscribedChannel
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                      description: Unique identifier of the subscriber
+                    name:
+                      type: string
+                      description: Name of the subscriber
+                    subscribedChannel:
+                      type: string
+                      description: Channel the subscriber is subscribed to
+
+  /subscribers/{id}:
+    get:
+      summary: Retrieve a single subscriber by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the subscriber to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A single subscriber
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                    description: Unique identifier of the subscriber
+                  name:
+                    type: string
+                    description: Name of the subscriber
+                  subscribedChannel:
+                    type: string
+                    description: Channel the subscriber is subscribed to
+                  subscribedDate:
+                    type: string
+                    format: date-time
+                    description: Date when the subscriber subscribed
+                  __v:
+                    type: integer
+                    description: Version key (for internal use)
+        '400':
+          description: Bad request, subscriber not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message

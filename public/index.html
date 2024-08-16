@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/index.css" rel="stylesheet" />
+    <title>Subscribers-Mongo</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Subscribers Mongo Page</h1>
+      <div class="links">
+        <a href="/subscribers" target="_blank">Subscribers</a>
+        <a href="/subscribers/names" target="_blank">Subscribers Names</a>
+      </div>
+      <div class="input-section">
+        <input type="text" id="idInput" placeholder="Enter Subscriber ID" />
+        <a id="dynamicId" target="_blank" class="btn">Subscribers ID</a>
+        <p id="errorMessage">Input can't be empty</p>
+      </div>
+      <div class="api-docs">
+        <a href="/api-docs" target="_blank" class="api-docs-btn">API Documentation</a>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("dynamicId")
+        .addEventListener("click", (event) => {
+          const id = document.getElementById("idInput").value;
+          if (id === "") {
+            event.preventDefault();
+            document.getElementById("errorMessage").style.display = "block";
+          } else {
+            const link = `/subscribers/${id}`;
+            event.target.setAttribute("href", link);
+            document.getElementById("errorMessage").style.display = "none";
+          }
+        });
+    </script>
+  </body>
+</html>
