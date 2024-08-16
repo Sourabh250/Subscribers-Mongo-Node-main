@@ -2,6 +2,19 @@
 
 A simple but powerful API built with Node.js and Express that allows you to manage and fetch subscriber details from a MongoDB database. It provides endpoints to retrieve all subscribers, obtain subscriber names, or access details for a specific subscriber by their ID.
 
+## Table of Contents
+
+1. [Technologies/Languages Used](#technologieslanguages-used)
+2. [Installation and Setup](#installation-and-setup)
+3. [Usage](#usage)
+4. [API Endpoints](#api-endpoints)
+5. [Testing](#testing)
+6. [Deployment](#deployment)
+7. [Live API Documentation](#live-api-documentation)
+8. [Contributing](#contributing)
+9. [Author](#author)
+10. [License](#license)
+
 ## Technologies/Languages Used
 
 | ![Node.js Logo](https://img.shields.io/badge/Node.js-%E2%9C%94-brightgreen) | ![Express](https://img.shields.io/badge/Express-%E2%9C%94-blue) | ![MongoDB](https://img.shields.io/badge/MongoDB-%E2%9C%94-green) | ![Mocha](https://img.shields.io/badge/Mocha-%E2%9C%94-yellowgreen) | ![Chai](https://img.shields.io/badge/Chai-%E2%9C%94-red) | ![Swagger](https://img.shields.io/badge/Swagger-%E2%9C%94-blueviolet) |
@@ -20,7 +33,7 @@ A simple but powerful API built with Node.js and Express that allows you to mana
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/Subscribers-Mongo-Node-main.git
+    git clone https://github.com/Sourabh250/Subscribers-Mongo-Node-main.git
     ```
 
 2. Install dependencies:
@@ -29,10 +42,13 @@ A simple but powerful API built with Node.js and Express that allows you to mana
     ```
 
 3. Create a `.env` file at the root and add the following:
-    ```plaintext
+To run this project, you will need to add the following environment variables to your .env file
+`DATABASE_URL` & `PORT`.  
+You can use the provided .env.example file as a reference.
+    
     DATABASE_URL=your_database_connection_string
-    PORT=3001
-    ```
+    PORT=3000
+    
 
 ## Usage
 
@@ -48,14 +64,25 @@ Get all subscribers
 ```
 GET /subscribers
 ```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `None` | `None` | Retrieves a list of all subscribers. |
+
 Get subscriber names
 ```
 GET /subscribers/names
 ```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `None` | `None` | Retrieves a list of subscribers with name and subscribed channel. |
+
 Get specific subscriber by ID
 ```
 GET /subscribers/:id
 ```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `id` | `string` | **Required**. ID of the subscriber to fetch. |
 
 ## Testing
 To run the tests, make sure you have Mocha and Chai installed. Then, run the following command:
@@ -84,5 +111,11 @@ Explore the API documentation and interact with the endpoints via Swagger UI:
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+## Author
+
+- [@Sourabh](https://github.com/Sourabh250) - Developer and maintainer of this project.
+
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
