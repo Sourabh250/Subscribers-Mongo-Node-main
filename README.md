@@ -45,10 +45,10 @@ A simple but powerful API built with Node.js and Express that allows you to mana
 To run this project, you will need to add the following environment variables to your .env file
 `DATABASE_URL` & `PORT`.  
 You can use the provided .env.example file as a reference.
-    
+    ```
     DATABASE_URL=your_database_connection_string
     PORT=3000
-    
+    ```
 
 ## Usage
 
